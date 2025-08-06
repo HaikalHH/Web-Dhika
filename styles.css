@@ -1,0 +1,710 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Background Container */
+.background-container {
+    flex: 1;
+    position: relative;
+    min-height: calc(100vh - 80px); /* Mengurangi tinggi footer */
+}
+
+/* Background Image */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.background-image picture,
+.background-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.background-image picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+    padding: 15px 0;
+    position: relative;
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.logo span {
+    line-height: 1.2;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: #1e7138;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-link.active {
+    background-color: #1e7138;
+    color: white
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 0px 0;
+    position: relative;
+    z-index: 10;
+    margin-top: -60px;
+}
+
+.main-content .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    align-items: flex-start;
+    min-height: 60vh;
+}
+
+/* Home Hero Content Responsive */
+.home-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 480px;
+    width: 100%;
+    margin-top: 60px;
+    margin-left: 0;
+    margin-right: auto;
+    gap: 12px;
+}
+
+.main-title {
+    font-size: 2.0rem;
+    color: #1e7138;
+    margin-bottom: 10px;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.1;
+}
+
+.description {
+    font-size: 0.7rem;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.7;
+    max-width: 420px;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    word-break: break-word;
+}
+
+.cta-button {
+    background-color: #1e7138;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.6rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    font-family: 'Poppins', sans-serif;
+}
+
+.cta-button:hover {
+    background-color: #1e7138;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+/* Responsive scaling for home hero content */
+@media (min-width: 2560px) {
+  .main-content {
+    margin-top: -80px;
+  }
+  .home-hero-content {
+    max-width: 700px;
+    margin-top: 100px;
+    margin-left: -450px;
+  }
+  .main-title {
+    font-size: 3.0rem;
+  }
+  .description {
+    font-size: 1.3rem;
+    max-width: 600px;
+  }
+  .cta-button {
+    font-size: 1.2rem;
+    padding: 15px 30px;
+  }
+  .header {
+    padding: 25px 0;
+  }
+  .logo {
+    font-size: 18px;
+    margin-left: -450px;
+  }
+  .logo img {
+    width: 70px;
+    height: 70px;
+  }
+  .nav {
+    gap: 30px;
+  }
+  .nav-link {
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+  }
+  .footer {
+    padding: 30px 0;
+    height: 100px;
+  }
+  .copyright {
+    font-size: 1.2rem;
+  }
+  .social-media {
+    gap: 20px;
+    margin-left: auto;
+  }
+  .social-icon {
+    width: 45px;
+    height: 45px;
+  }
+  .container {
+    max-width: 1400px;
+    padding: 0 30px;
+  }
+  .footer .container {
+    max-width: none;
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 720px) {
+  .main-content {
+    margin-top: -60px;
+  }
+  .home-hero-content {
+    max-width: 100%;
+    margin-top: 90px;
+    text-align: left;
+    margin-left: 0;
+  }
+  .main-title {
+    font-size: 2.5rem;
+  }
+  .description {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+  .cta-button {
+    font-size: 0.9rem;
+    padding: 12px 24px;
+  }
+  
+  .header {
+    padding: 15px 0;
+  }
+  .logo {
+    font-size: 16px;
+    margin-left: 0;
+  }
+  .logo img {
+    width: 45px;
+    height: 45px;
+  }
+  .nav {
+    gap: 15px;
+  }
+  .nav-link {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 20px;
+  }
+  .footer {
+    padding: 15px 0;
+    height: 70px;
+  }
+  .copyright {
+    font-size: 1rem;
+  }
+  .social-media {
+    gap: 15px;
+    margin-left: auto;
+  }
+  .social-icon {
+    width: 35px;
+    height: 35px;
+  }
+  .container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+  .footer .container {
+    max-width: none;
+    padding: 0 15px;
+  }
+  
+  /* Mobile-specific background adjustments */
+  .background-image picture {
+    height: 100vh;
+  }
+  
+  .background-container {
+    min-height: 100vh;
+  }
+  
+  /* Mobile styles for other pages */
+  .content-left {
+    max-width: 100%;
+    margin-top: 60px;
+    margin-left: 0;
+    text-align: center;
+  }
+  .history-box {
+    padding: 20px;
+  }
+  .history-title {
+    font-size: 2.5rem;
+  }
+  .history-text {
+    font-size: 1rem;
+  }
+  .history-button-container .cta-button {
+    font-size: 0.6rem;
+    padding: 8px 16px;
+  }
+  .sejarah-page .history-button-container .cta-button {
+    font-size: 1.2rem;
+    padding: 16px 32px;
+    border-radius: 32px;
+  }
+  
+  .content-right {
+    max-width: 100%;
+    margin-top: 60px;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+  }
+  .contact-info {
+    max-width: 100%;
+    margin-left: 0;
+  }
+  .contact-item {
+    font-size: 1rem;
+    gap: 12px;
+    margin-bottom: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .contact-icon {
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0;
+  }
+  .contact-item span {
+    flex: 1;
+    line-height: 1.4;
+    word-wrap: break-word;
+  }
+  .cta-message {
+    font-size: 1.1rem;
+    margin-top: 25px;
+    padding: 18px;
+  }
+  
+  .product-title {
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  .product-description {
+    font-size: 1.1rem;
+    max-width: 100%;
+    text-align: left;
+  }
+}
+
+/* Sejarah Page Styles */
+.history-box {
+    background: linear-gradient(135deg, #D2691E, #CD853F);
+    padding: 40px;
+    border-radius: 20px;
+    color: white;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+.history-title {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+}
+
+.history-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+.history-button-container {
+    margin-top: 20px;
+}
+
+/* Sejarah page specific main content */
+.sejarah-page .main-content {
+    flex: 1;
+    padding: 0px 0;
+    margin-top: -25px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Sejarah page specific View More button */
+.sejarah-page .history-button-container .cta-button {
+    background-color: #1e7138;
+    color: white;
+    border: none;
+    padding: 16px 36px;
+    border-radius: 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 30px rgba(76, 175, 80, 0.3);
+    font-family: 'Poppins', sans-serif;
+}
+
+.sejarah-page .history-button-container .cta-button:hover {
+    background-color: #1e7138;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(76, 175, 80, 0.4);
+}
+
+
+/* Kontak Page Styles */
+.contact-info {
+    max-width: 500px;
+    margin-left: auto;
+    margin-top: 100px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    color:#1e7138;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    width: 100%;
+}
+
+.contact-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.contact-item span {
+    flex: 1;
+    line-height: 1.4;
+    word-wrap: break-word;
+    text-align: left;
+}
+
+.cta-message {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1e7138;
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Produk Page Styles */
+.product-title {
+    font-size: 4rem;
+    color: #2E7D32;
+    margin-bottom: 30px;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    font-family: 'Poppins', sans-serif;
+}
+
+.product-description {
+    font-size: 1.2rem;
+    color: #1e7138;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    max-width: 600px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    text-align: left;
+}
+
+/* Content positioning for other pages */
+.content-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 600px;
+    width: 100%;
+    margin-top: 60px;
+    margin-left: 0;
+    margin-right: auto;
+    gap: 20px;
+}
+
+.content-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    max-width: 500px;
+    width: 100%;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: 0;
+    gap: 20px;
+}
+
+/* Responsive styles for Sejarah page */
+@media (min-width: 2560px) {
+  .content-left {
+    max-width: 1200px;
+    margin-top: 100px;
+    margin-left: -450px;
+  }
+  .history-box {
+    padding: 60px;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 1200px;
+  }
+  .history-title {
+    font-size: 4.5rem;
+  }
+  .history-text {
+    font-size: 1.8rem;
+  }
+  .history-button-container .cta-button {
+    font-size: 1.2rem;
+    padding: 15px 30px;
+  }
+  .sejarah-page .history-button-container .cta-button {
+    font-size: 1.4rem;
+    padding: 18px 36px;
+    border-radius: 36px;
+  }
+  .contact-info{
+    margin-top: 150px;
+  }
+  .nav{
+    margin-right: -300px;
+  }
+}
+
+
+
+
+
+
+
+/* Responsive styles for Kontak page */
+@media (min-width: 2560px) {
+  .content-right {
+    max-width: 700px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: -450px;
+  }
+  .contact-info {
+    max-width: 700px;
+  }
+  .contact-item {
+    font-size: 1.8rem;
+    gap: 20px;
+    margin-bottom: 35px;
+    align-items: flex-start;
+  }
+  .contact-icon {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+  }
+  .contact-item span {
+    flex: 1;
+    line-height: 1.4;
+    word-wrap: break-word;
+  }
+  .cta-message {
+    font-size: 2rem;
+    margin-top: 40px;
+    padding: 30px;
+  }
+}
+
+
+
+/* Responsive styles for Produk page */
+@media (min-width: 2560px) {
+  .product-title {
+    font-size: 6rem;
+    margin-bottom: 40px;
+  }
+  .product-description {
+    font-size: 2rem;
+    max-width: 800px;
+  }
+}
+
+
+
+/* Footer Styles */
+.footer {
+    background-color: #d18048;
+    color: white;
+    padding: 20px 0;
+    position: relative;
+    z-index: 10;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: none;
+    padding: 0 20px;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    margin-left: 0;
+    flex-shrink: 0;
+}
+
+.social-media {
+    display: flex;
+    gap: 15px;
+    margin-right: 0;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.social-icon {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-2px) scale(1.1);
+}
+
+.social-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
