@@ -110,6 +110,38 @@ body {
     color: white
 }
 
+/* Hamburger Menu Button */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #1e7138;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobile-menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #1e7138;
+    margin: 5px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.mobile-menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.mobile-menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
 /* Main Content */
 .main-content {
     flex: 1;
@@ -253,67 +285,105 @@ body {
 
 @media (max-width: 720px) {
   .main-content {
-    margin-top: -60px;
+    margin-top: -40px;
   }
   .home-hero-content {
     max-width: 100%;
-    margin-top: 90px;
+    margin-top: 40px;
     text-align: left;
     margin-left: 0;
+    padding: 0 10px;
   }
   .main-title {
-    font-size: 2.5rem;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    margin-bottom: 8px;
   }
   .description {
-    font-size: 1rem;
+    font-size: 0.7rem;
     max-width: 100%;
+    line-height: 1.4;
+    margin-bottom: 12px;
   }
   .cta-button {
-    font-size: 0.9rem;
-    padding: 12px 24px;
+    font-size: 0.6rem;
+    padding: 6px 12px;
+    border-radius: 15px;
   }
   
   .header {
-    padding: 15px 0;
+    padding: 8px 0;
   }
   .logo {
-    font-size: 16px;
+    font-size: 10px;
     margin-left: 0;
   }
   .logo img {
-    width: 45px;
-    height: 45px;
+    width: 25px;
+    height: 25px;
   }
+  
+  /* Show hamburger menu on mobile */
+  .mobile-menu-toggle {
+    display: block !important;
+  }
+  
+  /* Hide regular nav on mobile */
   .nav {
-    gap: 15px;
+    position: relative;
+    display: none;
   }
+  
+  .nav.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  
   .nav-link {
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 20px;
+    padding: 6px 10px;
+    font-size: 11px;
+    border-radius: 12px;
+    margin: 2px 0;
+    text-align: center;
   }
+  
   .footer {
-    padding: 15px 0;
-    height: 70px;
+    padding: 4px 0 !important;
+    height: 30px !important;
+    min-height: 30px !important;
+    position: relative;
+    bottom: 0;
+    width: 100%;
   }
   .copyright {
-    font-size: 1rem;
+    font-size: 0.5rem !important;
   }
   .social-media {
-    gap: 15px;
+    gap: 6px !important;
     margin-left: auto;
   }
   .social-icon {
-    width: 35px;
-    height: 35px;
+    width: 16px !important;
+    height: 16px !important;
   }
   .container {
     max-width: 100%;
-    padding: 0 15px;
+    padding: 0 8px;
   }
   .footer .container {
     max-width: none;
-    padding: 0 15px;
+    padding: 0 8px;
   }
   
   /* Mobile-specific background adjustments */
@@ -323,102 +393,162 @@ body {
   
   .background-container {
     min-height: 100vh;
+    padding-bottom: 30px;
   }
   
   /* Mobile styles for other pages */
   .content-left {
     max-width: 100%;
-    margin-top: 60px;
+    margin-top: 30px;
     margin-left: 0;
-    text-align: center;
+    text-align: left;
+    padding: 0 10px;
   }
   .history-box {
-    padding: 20px;
+    padding: 12px;
+    margin-bottom: 12px;
   }
   .history-title {
-    font-size: 2.5rem;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    margin-bottom: 12px;
   }
   .history-text {
-    font-size: 1rem;
+    font-size: 0.7rem;
+    line-height: 1.4;
   }
   .history-button-container .cta-button {
-    font-size: 0.6rem;
-    padding: 8px 16px;
+    font-size: 0.4rem;
+    padding: 5px 10px;
   }
   .sejarah-page .history-button-container .cta-button {
-    font-size: 1.2rem;
-    padding: 16px 32px;
-    border-radius: 32px;
+    font-size: 0.7rem;
+    padding: 8px 16px;
+    border-radius: 15px;
   }
   
   .content-right {
     max-width: 100%;
-    margin-top: 60px;
+    margin-top: 30px;
     margin-left: 0;
     margin-right: 0;
-    text-align: center;
+    text-align: left;
+    padding: 0 10px;
   }
   .contact-info {
     max-width: 100%;
     margin-left: 0;
+    margin-top: 0;
   }
   .contact-item {
-    font-size: 1rem;
-    gap: 12px;
-    margin-bottom: 20px;
+    font-size: 0.7rem;
+    gap: 6px;
+    margin-bottom: 12px;
     justify-content: flex-start;
     align-items: flex-start;
+    flex-wrap: wrap;
   }
   .contact-icon {
-    width: 35px;
-    height: 35px;
+    width: 20px;
+    height: 20px;
     flex-shrink: 0;
   }
   .contact-item span {
     flex: 1;
-    line-height: 1.4;
+    line-height: 1.3;
     word-wrap: break-word;
+    text-align: left;
   }
   .cta-message {
-    font-size: 1.1rem;
-    margin-top: 25px;
-    padding: 18px;
+    font-size: 0.8rem;
+    margin-top: 15px;
+    padding: 12px;
+    text-align: center;
   }
   
   .product-title {
-    font-size: 3.5rem;
-    margin-bottom: 25px;
-    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-align: left;
+    line-height: 1.2;
   }
   .product-description {
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     max-width: 100%;
     text-align: left;
+    line-height: 1.4;
+  }
+  
+  /* Fix for very small screens */
+  @media (max-width: 375px) {
+    .home-hero-content,
+    .content-left,
+    .content-right {
+      padding: 0 8px;
+    }
+    .main-title {
+      font-size: 1.2rem;
+    }
+    .history-title {
+      font-size: 1.2rem;
+    }
+    .product-title {
+      font-size: 1.6rem;
+    }
+    .nav-link {
+      padding: 5px 8px;
+      font-size: 10px;
+    }
+    .home-hero-content .cta-button {
+      margin-top: 100px;
+    }
+    
+    .footer {
+      padding: 3px 0 !important;
+      height: 25px !important;
+      min-height: 25px !important;
+    }
+    .copyright {
+      font-size: 0.45rem !important;
+    }
+    .social-media {
+      gap: 4px !important;
+    }
+    .social-icon {
+      width: 14px !important;
+      height: 14px !important;
+    }
+    .container {
+      padding: 0 6px;
+    }
+    .footer .container {
+      padding: 0 6px;
+    }
   }
 }
 
 /* Sejarah Page Styles */
 .history-box {
     background: linear-gradient(135deg, #D2691E, #CD853F);
-    padding: 40px;
+    padding: 25px;
     border-radius: 20px;
     color: white;
     box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-    max-width: 600px;
-    margin-bottom: 30px;
+    max-width: 500px;
+    margin-bottom: 20px;
 }
 
 .history-title {
-    font-size: 3rem;
-    margin-bottom: 30px;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
     text-align: center;
     font-weight: 800;
     font-family: 'Poppins', sans-serif;
 }
 
 .history-text {
-    font-size: 1.1rem;
-    line-height: 1.8;
+    font-size: 1rem;
+    line-height: 1.6;
     margin-bottom: 0;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
@@ -557,6 +687,7 @@ body {
     margin-right: 0;
     gap: 20px;
 }
+
 
 /* Responsive styles for Sejarah page */
 @media (min-width: 2560px) {

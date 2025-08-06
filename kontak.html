@@ -29,7 +29,12 @@
                 <div class="logo">
                     <img src="assets/logo.png" alt="Teh Tarik Hanaang Logo">
                 </div>
-                <nav class="nav">
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </button>
+                <nav class="nav" id="mobileNav">
                     <a href="index.html" class="nav-link">HOME</a>
                     <a href="sejarah.html" class="nav-link">SEJARAH</a>
                     <a href="kontak.html" class="nav-link active">KONTAK</a>
@@ -90,5 +95,24 @@
             </div>
         </div>
     </footer>
+    
+    <script>
+        function toggleMobileMenu() {
+            const nav = document.getElementById('mobileNav');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            nav.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('mobileNav');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+                nav.classList.remove('active');
+                toggle.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html> 
